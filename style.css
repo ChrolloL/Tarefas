@@ -1,0 +1,25 @@
+.container-fluid {
+    margin: 200px;
+}
+
+img {
+    width: 50%;
+    margin-left: 100px;
+}
+
+#divQuadro {
+    width: 50%;
+}
+
+.tarefa-selecionada {
+    color: red;
+    font-style: italic;
+}
+
+.tarefa-normal {
+    color: black;
+}
+
+h1 {
+    border-bottom-style: inset;
+}
