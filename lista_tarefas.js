@@ -17,15 +17,58 @@ frm.addEventListener('submit', (e) => {
 })
 
 frm.btnSelecionar.addEventListener('click', () => {
-
+    
     const tarefas = document.querySelectorAll('h5') //pega todos os h5 que estão no form e armazena numa lista
     if (tarefas.length == 0) {
         alert('Não há tarefas para selecionar!!')
         return
     }
-  
-    //percorrer a lista de elementos h5 inseridos na página
+
+    let cont = -1
+
     for (let i = 0; i < tarefas.length; i++) {
-        tarefas[i].className = 'tarefa-selecionada'
+       
+        
+       if (tarefas[i].className == 'tarefa-selecionada') {
+            tarefas[i].className = 'tarefa-normal'
+            cont = i
+            break
+       }
     }
+    
+    if (cont == tarefas.length - 1) {
+        cont = -1
+    }
+    tarefas[cont + 1].className = 'tarefa-selecionada' //muda o estilo da próxima linha
+
+    
 })
+
+frm.btnRetirar.addEventListener('click', () => {
+    
+    const tarefas = document.querySelectorAll('h5') //pega todos os h5 que estão no form e armazena numa lista
+    
+    let aux = 0
+
+    for (let i = 0; i < tarefas.length; i++) {
+       
+        
+       if (tarefas[i].className == 'tarefa-selecionada') {
+         tarefas.Splice(i)
+         aux = 1
+         return
+       }  
+    }
+
+    if (aux == 0) {
+        alert('Selecione uma tarefa para removê-la')
+        return
+    }
+    
+
+})
+
+    
+    
+
+    
